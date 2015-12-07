@@ -6,6 +6,10 @@
 	@include('site._side-bar',['sidebar_active_menu'=>'violations'])
 @endsection
 
+@section('top-css')
+	<link rel="stylesheet" href="{{url('js/vendor/jplist/css/jplist.core.min.css')}}">
+@endsection
+
 @section('extra-js')
 	<script src="{{url('/js/vendor/jplist/js/jplist.core.min.js')}}"></script>
 	<script src="{{url('/js/vendor/jplist/js/jplist.sort-bundle.min.js')}}"></script>
@@ -92,10 +96,18 @@
 					</div>
 				</div>
 			@else
-				<div class="jplist-no-results">
+				<div class="col-md12">
 					<p>No violations have been found.</p>
 				</div>
 			@endif
+
+			<div class="jplist-no-results">
+				<p>No violations have been found.</p>
+			</div>
+
+		</div>
+
+		<div class="row">
 
 			<div class="row jplist-panel">
 
@@ -108,6 +120,7 @@
 			         data-control-action="paging">
 			        </div>     				
 				</div>
+
 				<div class="col-md-6">
 					<ul 
 					  class="pagination pull-right jplist-pagination"
@@ -118,10 +131,10 @@
 					  data-mode="google-like">
 					</ul>	   				
 				</div>
+
 			</div>
 
-	</div>
-
+		</div>
 
 	</div>	
 
