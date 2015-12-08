@@ -9,6 +9,7 @@
         <div class="wrapper">
             <div id="content" class="container signup-big">
                 @yield('content')
+
             </div>
 
             @include('layouts/_footer')
@@ -20,6 +21,10 @@
         <script src="{{ url('/js/app.js') }}"></script>
         <script src="{{ url('/js/bootstrap-maxlength.js') }}"></script>        
         <script src="{{ url('/js/bootstrap-select.min.js') }}"></script>        
+
+        @if(Session::has('message'))
+            @include('layouts._dialogs-alert')
+        @endif
                           
     </body>
 </html>

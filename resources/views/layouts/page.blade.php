@@ -20,18 +20,18 @@
             @include('layouts/_footer')
             
         </div>
-           
-        @if(Session::has('message'))
-            @include('layouts._dialogs-alert')
-    	@endif
-               
+                          
         <script src="{{ url('/js/bootbox.min.js') }}"></script>
         <script src="https://cdn.datatables.net/s/bs/jqc-1.11.3,dt-1.10.10/datatables.min.js"></script> 
         <script src="{{ url('/js/app.js') }}"></script>
         <script src="{{ url('/js/bootstrap-maxlength.js') }}"></script>
         <script src="{{ url('/js/bootstrap-select.min.js') }}"></script>
 
-        @yield('extra-js')               
-        
+        @yield('extra-js')
+
+        @if(Session::has('message'))
+            @include('layouts._dialogs-alert')
+        @endif
+
     </body>
 </html>

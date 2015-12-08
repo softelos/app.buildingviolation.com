@@ -23,6 +23,14 @@ Route::post('signup-customer','Auth\AuthController@postRegisterCustomer');
 Route::get('signup-pro','Auth\AuthController@getRegisterPro');
 Route::post('signup-pro','Auth\AuthController@postRegisterPro');
 
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 // User
 Route::resource('user','UserController');
 Route::get('/user/avatar/upload/{user_id}','UserController@avatar_upload');

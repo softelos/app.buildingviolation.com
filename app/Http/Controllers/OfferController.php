@@ -56,7 +56,7 @@ class OfferController extends Controller
         $conditions=Condition::where('offer_id',$id)->get();
         $conditions_count=count($conditions);
         // Payment values
-        $payment_fee=5;
+        $payment_fee=config('other.fee');
         $payment=[
             'fee'=>$payment_fee.'%',
             'pro'=>'$'.$offer->cost,
@@ -352,7 +352,7 @@ class OfferController extends Controller
     // This function is used by other places
     public function getCost($offer_id){
         $offer=Offer::findOrFail($offer_id);               
-        $fee=5;
+        $fee=config('other.fee');
         $pro_cost=(float)$offer->cost;
         $bv_cost=$pro_cost*($fee/100);
         $total=$pro_cost*(1+($fee/100));        

@@ -50,6 +50,15 @@
 			
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<a href="{{url('password/email')}}">Forgot password?</a>
+		</div>
+	</div>
+
+
+
 </section>
 	
 @endsection

@@ -1,6 +1,6 @@
 <script>                
 	bootbox.dialog({
-		title:"Message",
+		title:"<b>Note</b>",
 		message:"{!! Session::get('message') !!}",
 		closeButton:true,
 		buttons:{
